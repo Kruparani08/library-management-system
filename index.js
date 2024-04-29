@@ -1,58 +1,32 @@
-const express = require("express")
-const cors = require("cors");
-const passport = require("passport");
-const cookieParser = require("cookie-parser");
-// const bcrypt = require("bcryptjs");
-const session = require("express-session");
-const bodyParser = require("body-parser");
-const morgan = require("morgan");
-const app = express();
-const dotenv = require("dotenv")
-const routes = require("./api/routes/index")
 const router = require("express").Router();
-dotenv.config();
 
 
-app.use(morgan("dev"));
+const userController = require("../controller/userAPI");
+const bookController = require("../controller/bookAPI");
 
 
-//database connection
-require("./db_connection");
+// user api
+router.get("/allUser", userController.allUser);
+router.post("/register", userController.registerUser);
+router.post("/updateUser", userController.updateUser);
+router.post("/login", userController.loginUser);
+router.post("/logout", userController.logout);
+router.get("/logedinuser", userController.userDetails);
+router.get("/userDetail/:id", userController.userDetail);
 
-
-// Middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-    cors({
-        origin: "http://localhost:3000", // <-- location of the react app were connecting to
-        credentials: true,
-    })
-);
-app.use(
-    session({
-        secret: "secretcode",
-        resave: true,
-        saveUninitialized: true,
-        cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000, prioroty: "High" }
-    })
-);
-app.use(cookieParser(process.env.SECRET));
-app.use(passport.initialize());
-app.use(passport.session());
-require("./config/passportConfig")(passport);
-
-
-//Middleware End
-
-//Route
-
-app.use(routes);
+router.post("/addBook", bookController.addBook);
+router.get("/allBook", bookController.getAllBooks);
+router.get("/search/:id", bookController.searchBooks);
+router.post("/addToCart", bookController.addToCart);
+router.post("/checkout", bookController.checkout);
+router.post("/returnBooks", bookController.returnBooks);
+router.post("/filter/", bookController.returnBooks);
+router.post("/removeFromCart", bookController.removeFromCart);
+router.get("/filter/:genre/:year/:title", bookController.filter);
+router.get("/booksInCart/:username", bookController.booksInCart);
+router.get("/borrowedBooks", bookController.borrowedBooks);
 
 
 
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log("Server Is Connected to Port " + PORT);
-})
+module.exports = router;
