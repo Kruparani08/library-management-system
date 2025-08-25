@@ -1,70 +1,145 @@
-# Getting Started with Create React App
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>📚 Library Management System</h1>
+<!-- Sidebar Navigation -->
+<nav>
+  <h2>📑 Contents</h2>
+  <ul>
+    <li><a href="#overview">📝 Project Overview</a></li>
+    <li><a href="#features">✨ Features</a></li>
+    <li><a href="#tech-stack">🛠 Tech Stack</a></li>
+    <li><a href="#getting-started">🚀 Getting Started</a></li>
+    <li><a href="#scripts">📜 Scripts</a></li>
+    <li><a href="#structure">📂 Structure</a></li>
+    <li><a href="#config">⚙️ Configuration</a></li>
+    <li><a href="#api">🔗 API Endpoints</a></li>
+    <li><a href="#contribute">🤝 Contributing</a></li>
+  </ul>
+</nav>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Main Content -->
+<main>
+  <p>
+    <span>⚛️ React</span> |
+    <span>🟢 Node.js</span> |
+    <span>🔐 Passport.js</span> |
+    <span>🌐 REST API</span>
+  </p>
 
-## Available Scripts
+  <p>
+    A modern web-based <b>Library Management System</b> designed for efficient management of 📖 books and 👤 users. 
+    Built with <strong>⚛️ React</strong> frontend and <strong>🟢 Node.js</strong> backend, 
+    featuring CRUD operations, 🔐 authentication, and 🕒 activity tracking.
+  </p>
 
-In the project directory, you can run:
+  <h2 id="overview">📝 1. Project Overview</h2>
+  <p>
+    Initialized with <b>Create React App</b>, this system provides a user-friendly interface connected 
+    to a backend service. It manages 📚 library resources, 👥 users, and integrates secure authentication with 🔐 Passport.
+  </p>
 
-### `npm start`
+  <h2 id="features">✨ 2. Features</h2>
+  <ul>
+    <li>🎨 Responsive React frontend</li>
+    <li>📝 CRUD operations for 📖 books & 👤 users</li>
+    <li>🔐 Authentication via Passport.js</li>
+    <li>🕒 Recent activity logging</li>
+    <li>🆔 Unique ID generation for records</li>
+    <li>💾 Database integration</li>
+    <li>🧪 Testing with React Testing Library</li>
+    <li>🚀 Production-ready builds</li>
+  </ul>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <h2 id="tech-stack">🛠 3. Tech Stack</h2>
+  <table>
+    <tr><th>⚙️ Layer</th><th>🔧 Technology</th></tr>
+    <tr><td>💻 Frontend</td><td>⚛️ React (JavaScript, HTML, CSS)</td></tr>
+    <tr><td>🔐 Authentication</td><td>Passport.js</td></tr>
+    <tr><td>💾 Database</td><td>🟢 Node.js with DB connection</td></tr>
+    <tr><td>🔗 API Clients</td><td>📖 bookAPI.js, 👤 userAPI.js</td></tr>
+    <tr><td>🧪 Testing</td><td>React Testing Library, Jest</td></tr>
+    <tr><td>🚀 Deployment</td><td>Create React App</td></tr>
+  </table>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <h2 id="getting-started">🚀 4. Getting Started</h2>
+  <h3>✅ Prerequisites</h3>
+  <ul>
+    <li>🟢 Node.js (LTS)</li>
+    <li>📦 npm</li>
+  </ul>
+  <h3>⚡ Installation</h3>
+  <pre><code>git clone https://github.com/Kruparani08/library-management-system.git
+cd library-management-system
+npm install
+npm start</code></pre>
 
-### `npm test`
+  <h2 id="scripts">📜 5. Available Scripts</h2>
+  <ul>
+    <li><code>npm start</code> – ▶️ Start dev server</li>
+    <li><code>npm test</code> – 🧪 Run tests</li>
+    <li><code>npm run build</code> – 🏗 Build for production</li>
+    <li><code>npm run eject</code> – ⚠️ Eject configuration</li>
+  </ul>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <h2 id="structure">📂 6. Directory Structure</h2>
+  <pre><code>/public
+/src
+ ├── App.js
+ ├── bookAPI.js
+ ├── userAPI.js
+ ├── db_connection.js
+ ├── passportConfig.js
+ ├── generateUID.js
+ ├── recentActivity.js
+ └── ...
+.env
+package.json</code></pre>
 
-### `npm run build`
+  <h2 id="config">⚙️ 7. Configuration</h2>
+  <ul>
+    <li><b>🌍 .env</b> – Environment variables</li>
+    <li><b>💾 db_connection.js</b> – DB configuration</li>
+    <li><b>🔐 passportConfig.js</b> – Auth strategies</li>
+    <li><b>📖 bookAPI.js</b>, <b>👤 userAPI.js</b> – API handlers</li>
+  </ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <h2 id="api">🔗 8. API Endpoints (Proposed)</h2>
+  <h3>📖 Books</h3>
+  <ul>
+    <li>GET /api/books – 📚 List all books</li>
+    <li>POST /api/books – ➕ Add new book</li>
+    <li>PUT /api/books/:id – ✏️ Update book</li>
+    <li>DELETE /api/books/:id – 🗑 Delete book</li>
+  </ul>
+  <h3>👤 Users</h3>
+  <ul>
+    <li>GET /api/users – 👥 List users</li>
+    <li>POST /api/users – 🆕 Register user</li>
+    <li>PUT /api/users/:id – ✏️ Update user</li>
+    <li>DELETE /api/users/:id – 🗑 Delete user</li>
+  </ul>
+  <h3>🔐 Authentication</h3>
+  <ul>
+    <li>POST /api/auth/login – 🔑 Login</li>
+    <li>POST /api/auth/register – 🆕 Register</li>
+  </ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  <h2 id="contribute">🤝 9. Contributing</h2>
+  <ol>
+    <li>🍴 Fork repository</li>
+    <li>🌿 Create branch <code>feature/xyz</code></li>
+    <li>💾 Commit changes</li>
+    <li>📤 Push branch & open PR</li>
+  </ol>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <footer>
+    <p>© 2025 📚 Library Management System | 📖 Documentation</p>
+  </footer>
+</main>
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</body>
+</html>
